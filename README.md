@@ -4,10 +4,8 @@ Module to send money through MercadoPago's payment system!
 ## Commands
 <ul class="commands_readme">
     <li>Login</li>
-    <li>Add Customer</li>
-    <li>Add Item</li>
-    <li>Create Invoice</li>
-    <li>Send Invoice</li>
+    <li>Search Payments</li>
+    <li>Get Payment</li>
 </ul>
 
 **In the example robot you must change the URL for yours.
