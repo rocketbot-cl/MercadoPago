@@ -1,5 +1,5 @@
-# AdvancedExcel
-Module to send an invoice through Stripe's payment system!
+# MercadoPago
+Module to send money through MercadoPago's payment system!
 
 ## Commands
 <ul class="commands_readme">

@@ -31,21 +31,15 @@ import sys
 
 base_path = tmp_global_obj["basepath"]
 cur_path = base_path + 'modules' + os.sep + \
-           'Stripe' + os.sep + 'libs' + os.sep
+           'mercadopago' + os.sep + 'libs' + os.sep
 if cur_path not in sys.path:
     sys.path.append(cur_path)
 
 import mercadopago
 
-base_path = tmp_global_obj["basepath"]
-cur_path = base_path + "modules" + os.sep + "PeopleandItems" + os.sep + "libs" + os.sep
-if cur_path not in sys.path:
-    sys.path.append(cur_path)
-from PeopleandItems import PeopleandItems
-
 module = GetParams("module")
 
-global items
+global items, sdk, testkey, payments_id
 items = []
 
 if module == "login":
@@ -83,12 +77,12 @@ if module == "add_item":
     amount = GetParams("amount")
     quantity = GetParams("quantity")
     item = GetParams("item")
-
+    amount = int(amount)
 
     try:
         temp = {"title": item, "quantity": quantity, "unit_price": amount}
         items.append(temp)
-
+        print(items)
     except Exception as e:
         print("\x1B[" + "31;40mError\x1B[" + "0m")
         PrintException()
@@ -100,10 +94,10 @@ if module == "create_invoice":
     payment_name = GetParams("payment_name")
     payment_method = GetParams("payment_method")
     email = GetParams("email")
-
+    total = int(total)
     try:
         preference_data = {
-            items
+            "items": items
         }
 
         preference_response = sdk.preference().create(preference_data)
@@ -120,7 +114,59 @@ if module == "create_invoice":
 
         payment_response = sdk.payment().create(payment_data)
         payment = payment_response["response"]
+        print(payment)
+    except Exception as e:
+        print("\x1B[" + "31;40mError\x1B[" + "0m")
+        PrintException()
+        raise e
 
+if module == "get_invoice":
+    id = GetParams("id")
+    var = GetParams("var")
+    try:
+        auth = 'Bearer' + testkey
+        headers = {
+            'Authorization': auth,
+        }
+        url = 'https://api.mercadopago.com/v1/payments/' + id
+        response = requests.get(url, headers=headers)
+        resp = response.json()
+        SetVar(var, resp)
+
+    except Exception as e:
+        print("\x1B[" + "31;40mError\x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "search_payments":
+    id = GetParams("id")
+    criteria = GetParams("criteria")
+    sort = GetParams("sort")
+
+    try:
+        auth = 'Bearer' + testkey
+        headers = {
+            'Authorization': auth,
+        }
+        url = "https://api.mercadopago.com/v1/payments/search?sort=" + sort + "&criteria=" + criteria + "&external_reference=" + id
+        response = requests.get(url, headers=headers)
+        res = response.json()
+        payments_id = [result["id"] for result in res["results"]
+    except Exception as e:
+        print("\x1B[" + "31;40mError\x1B[" + "0m")
+        PrintException()
+        raise e
+
+if module == "get_payment":
+    id = GetParams("id")
+
+    try:
+        auth = 'Bearer' + testkey
+        headers = {
+            'Authorization': auth,
+        }
+        url = "https://api.mercadopago.com/v1/payments/" + id
+        reponse = requests.get(url, headers=headers)
     except Exception as e:
         print("\x1B[" + "31;40mError\x1B[" + "0m")
         PrintException()
