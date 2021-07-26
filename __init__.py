@@ -124,7 +124,7 @@ if module == "get_invoice":
     id = GetParams("id")
     var = GetParams("var")
     try:
-        auth = 'Bearer' + testkey
+        auth = 'Bearer ' + testkey
         headers = {
             'Authorization': auth,
         }
@@ -142,31 +142,26 @@ if module == "search_payments":
     id = GetParams("id")
     criteria = GetParams("criteria")
     sort = GetParams("sort")
+    var = GetParams("var")
 
     try:
-        auth = 'Bearer' + testkey
+        if id is None:
+            id = ""
+        if not criteria:
+            criteria = "desc"
+        if not sort:
+            sort = "date_created"
+
+        auth = 'Bearer ' + testkey
         headers = {
             'Authorization': auth,
         }
         url = "https://api.mercadopago.com/v1/payments/search?sort=" + sort + "&criteria=" + criteria + "&external_reference=" + id
         response = requests.get(url, headers=headers)
         res = response.json()
-        payments_id = [result["id"] for result in res["results"]
-    except Exception as e:
-        print("\x1B[" + "31;40mError\x1B[" + "0m")
-        PrintException()
-        raise e
 
-if module == "get_payment":
-    id = GetParams("id")
-
-    try:
-        auth = 'Bearer' + testkey
-        headers = {
-            'Authorization': auth,
-        }
-        url = "https://api.mercadopago.com/v1/payments/" + id
-        reponse = requests.get(url, headers=headers)
+        payments_id = [result["id"] for result in res["results"]]
+        SetVar(var, payments_id)
     except Exception as e:
         print("\x1B[" + "31;40mError\x1B[" + "0m")
         PrintException()

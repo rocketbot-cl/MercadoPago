@@ -21,7 +21,7 @@
   "children": [{
       "en": {
         "title": "Login",
-        "description": "Input the fresh token client id and client secret to get the access token",
+        "description": "Input the access token",
         "title_options": null,
         "options": null
       },
@@ -42,11 +42,11 @@
             },
             "title": {
               "es": " ",
-              "en": "test key:"
+              "en": "Access Token:"
             },
             "help": {
               "es": " ",
-              "en": "enter the client id"
+              "en": "enter the access token"
             },
             "id": "testkey",
             "css": "col-lg-6"
@@ -469,6 +469,23 @@
               "en": " "
             },
             "id": "sort",
+            "css": "col-lg-6"
+          },
+                    {
+            "type": "input",
+            "placeholder": {
+              "es": " ",
+              "en": " "
+            },
+            "title": {
+              "es": " ",
+              "en": "Variable:"
+            },
+            "help": {
+              "es": " ",
+              "en": "Variable to store all payment ids"
+            },
+            "id": "var",
             "css": "col-lg-6"
           }
         ]
