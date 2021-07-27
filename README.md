@@ -10,7 +10,7 @@ Module to send money through MercadoPago's payment system!
 
 **In the example robot you must change the URL for yours.
 
-![alt text](https://raw.githubusercontent.com/rocketbot-cl/Stripe/master/example/stripecommands.png)
+![alt text](https://github.com/rocketbot-cl/MercadoPago/blob/master/example/mercadopagocommands.png)
 
 
 ## Updates
