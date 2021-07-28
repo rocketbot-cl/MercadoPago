@@ -8,24 +8,24 @@ Module to send money through MercadoPago's payment system!
     <li>Get Payment</li>
 </ul>
 
-##Overview
+## Overview
 
 ![alt text](https://raw.githubusercontent.com/rocketbot-cl/Mercadopago/master/example/mercadopagocommands.png)
 
 1. #### Login
 	Uses the access key to login in to your mercadopago account.
 	
-	![Login](example/mercadopago1.png)
+	![Login](https://github.com/rocketbot-cl/MercadoPago/blob/master/example/mercadopago1.png)
 	
 2. #### Search Payments
 	Finds all payments being made to this account and stores the payment id in a rocketbot variable.
 	
-	![Search Payments](example/mercadopago2.png)
+	![Search Payments](https://github.com/rocketbot-cl/MercadoPago/blob/master/example/mercadopago2.png)
 	
 3. #### Get Payment
 	Takes in a payment id and returns the payment details in a rocketbot variable.
 	
-	![Get Payment](example/mercadopago3.png)
+	![Get Payment](https://github.com/rocketbot-cl/MercadoPago/blob/master/example/mercadopago3.png)
 	
 ### OS:
   - Linux
