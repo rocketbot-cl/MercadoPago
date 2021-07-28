@@ -74,7 +74,7 @@
         "options": null
       },
       "es": {
-        "title": "Pagos de búsqueda",
+        "title": "Buscar Pagos",
         "description": "Obtenga los identificadores de todos los pagos",
         "title_options": null,
         "options": null
@@ -173,8 +173,8 @@
         "options": null
       },
       "es": {
-        "title": " ",
-        "description": " ",
+        "title": "Obtener pago",
+        "description": "Obtenga los detalles de un pago",
         "title_options": null,
         "options": null
       },
