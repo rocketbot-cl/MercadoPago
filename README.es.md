@@ -1,26 +1,26 @@
 # MercadoPago
   
-Module to work with MercadoPago  
+Modulo para trabajar con MercadoPago  
 
 *Read this in other languages: [English](README.md), [Español](README.es.md).*
 
-## How to install this module
+## Como instalar este módulo
   
-__Download__ and __install__ the content in 'modules' folder in Rocketbot path  
+__Descarga__ e __instala__ el contenido en la carpeta 'modules' en la ruta de Rocketbot.  
 
 
 
 ## Overview
 
 
-1. Login  
-Input the access token
+1. Acceso  
+Ingrese el token de acceso
 
-2. Search Payments  
-Get the ids of all payments
+2. Buscar pagos  
+Obtenga los identificadores de todos los pagos
 
-3. Get Payment  
-Get the details of a payment  
+3. Obtener Pago  
+Obtiene detalles del pago desde un id obtenido en el comando buscar pagos  
 
 
 
