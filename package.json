@@ -3,9 +3,9 @@
   "author": "Sudhan Annamalai",
   "description": "Modulo para trabajar con MercadoPago",
   "disclaimer": "THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.",
-  "version": "1.0",
+  "version": "1.0.1",
   "license": "MIT",
-  "homepage": "http://rocketbot.co",
+  "homepage": "http://rocketbot.com",
   "linux": false,
   "windows": true,
   "mac": false,
@@ -27,7 +27,7 @@
       },
       "es": {
         "title": "Acceso",
-        "description": "Ingrese el token de acceso\n",
+        "description": "Ingrese el token de acceso",
         "title_options": null,
         "options": null
       },
@@ -37,16 +37,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "token",
+              "en": "token"
             },
             "title": {
               "es": "Token de Acceso",
               "en": "Access Token:"
             },
-            "help": {
-              "es": "ingrese el token de acceso",
-              "en": "enter the access token"
+            "description": {
+              "es": "Token de acceso de MercadoPago",
+              "en": "MercadoPago access token"
             },
             "id": "testkey",
             "css": "col-lg-6"
@@ -85,16 +85,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "id",
+              "en": "id"
             },
             "title": {
               "es": "ID de referencia externa:",
               "en": "External Reference ID:"
             },
-            "help": {
-              "es": " ",
-              "en": " "
+            "description": {
+              "es": "ID de referencia externa del pago",
+              "en": "External Reference ID of the payment"
             },
             "id": "id",
             "css": "col-lg-6"
@@ -102,16 +102,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "criterio",
+              "en": "criteria"
             },
             "title": {
               "es": "Criterios:",
               "en": "Criteria:"
             },
-            "help": {
-              "es": " ",
-              "en": " "
+            "description": {
+              "es": "Criterios de búsqueda",
+              "en": "Search criteria"
             },
             "id": "criteria",
             "css": "col-lg-6"
@@ -119,16 +119,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "sort",
+              "en": "sort"
             },
             "title": {
               "es": "Ordenar:",
               "en": "Sort:"
             },
-            "help": {
-              "es": " ",
-              "en": " "
+            "description": {
+              "es": "Ordenar por",
+              "en": "Sort by"
             },
             "id": "sort",
             "css": "col-lg-6"
@@ -136,16 +136,20 @@
                     {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "resultado",
+              "en": "result"
             },
             "title": {
               "es": "Variable:",
               "en": "Variable:"
             },
+            "description": {
+                "es": "Variable donde se guardarán los resultados",
+                "en": "Variable to store all payment ids"
+            },
             "help": {
               "es": "Nombre de la variable donde se guardarán los resultados. No debe llevar llaves {}",
-              "en": "Variable to store all payment ids"
+              "en": "Variable to store all payment ids. Must not contain {}"
             },
             "id": "var",
             "css": "col-lg-6"
@@ -185,16 +189,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "id",
+              "en": "id"
             },
             "title": {
               "es": "ID de pago:",
               "en": "Payment Id:"
             },
-            "help": {
-              "es": " ",
-              "en": " "
+            "description": {
+              "es": "ID del pago a buscar",
+              "en": "Payment ID to search"
             },
             "id": "id",
             "css": "col-lg-6"
@@ -202,12 +206,16 @@
           {
             "type": "input",
             "placeholder": {
-              "es": " ",
-              "en": " "
+              "es": "result",
+              "en": "result"
             },
             "title": {
               "es": "Variable:",
               "en": "Variable:"
+            },
+            "description": {
+              "es": "Variable donde se almacenará el resultado",
+              "en": "Variable to store the payment details"
             },
             "help": {
               "es": "Nombre de la variable donde almacenará el resultado. No debe tener llaves {}",
